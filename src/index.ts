@@ -21,9 +21,9 @@ app.get('/', (req, res) => {
     res.send('NeuroNotes API is running');
 });
 
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/neuronotes';
+const MONGO_URI = process.env.MONGO_URI;
 
-mongoose.connect(MONGO_URI)
+mongoose.connect(MONGO_URI!)
     .then(() => {
         console.log('Connected to MongoDB');
         app.listen(PORT, () => {
